@@ -6,7 +6,7 @@ int s_retry_num = 0;
 
 
 #define WIFI_SSID "Alpha3"
-#define WIFI_PASSWORD "asus_639122"
+#define WIFI_PASSWORD "asus_"
 #define MAXIMUM_RETRY 5
 /* FreeRTOS event group to signal when we are connected*/
 EventGroupHandle_t s_wifi_event_group;
