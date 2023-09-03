@@ -85,6 +85,7 @@ static camera_config_t camera_config = {
 
     //XCLK 20MHz or 10MHz for OV2640 double FPS (Experimental)
     .xclk_freq_hz = 20000000,
+    //.xclk_freq_hz = 10000000,  //std
     .ledc_timer = LEDC_TIMER_0,
     .ledc_channel = LEDC_CHANNEL_0,
 
@@ -95,7 +96,7 @@ static camera_config_t camera_config = {
     //.frame_size = FRAMESIZE_QVGA,    //320x240
 
     .jpeg_quality = 12, //0-63, for OV series camera sensors, lower number means higher quality
-    .fb_count = 1,       //When jpeg mode is used, if fb_count more than one, the driver will work in continuous mode.
+    .fb_count = 2,       //When jpeg mode is used, if fb_count more than one, the driver will work in continuous mode.
     .grab_mode = CAMERA_GRAB_WHEN_EMPTY,
 };
 
