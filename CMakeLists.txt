@@ -5,4 +5,4 @@ cmake_minimum_required(VERSION 3.5)
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 #append mi LINK & Kconfig ERROR SOLUTION !!!
 list(APPEND EXTRA_COMPONENT_DIRS .pio/libdeps/esp32cam)
-project(ESPIDF-CAM-TEST)
+project(ESP32CAM-PIO-IDF-STREAM)
