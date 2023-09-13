@@ -3,7 +3,7 @@
 int wifi_connect_status = 0;
 
 #define ESP_WIFI_SSID "Alpha3"
-#define ESP_WIFI_PASS "asus_639122"
+#define ESP_WIFI_PASS "asus_"
 #define ESP_MAXIMUM_RETRY 5
 #define WIFI_CONNECTED_BIT BIT0
 //#define WIFI_FAIL_BIT BIT1
