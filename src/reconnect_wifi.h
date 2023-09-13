@@ -1,5 +1,5 @@
-#ifndef CONNECT_WIFI_H_
-#define CONNECT_WIFI_H_
+#ifndef RECONNECT_WIFI_H_
+#define RECONNECT_WIFI_H_
 
 #include <esp_system.h>
 #include <nvs_flash.h>
@@ -19,6 +19,8 @@
 
 extern int wifi_connect_status;
 
-void connect_wifi(void);
+esp_err_t wifi_sta_init(void);
+
+//esp_err_t wifi_sta_reconnect(void);
 
 #endif

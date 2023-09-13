@@ -17,7 +17,8 @@
 #include "esp_timer.h"
 //#include "esp_wifi.h"
 //#include "camera_pins.h"
-#include "connect_wifi.h"
+//#include "connect_wifi.h"
+#include "reconnect_wifi.h"
 
 /*CAMERA*/
 #include <esp_log.h>
@@ -84,7 +85,7 @@ static camera_config_t camera_config = {
     .pin_pclk = CAM_PIN_PCLK,
 
     //XCLK 20MHz or 10MHz for OV2640 double FPS (Experimental)
-    .xclk_freq_hz = 20000000, //cameras not working good...
+    .xclk_freq_hz = 20000000, //some cameras not working good...
     //.xclk_freq_hz = 10000000,  //std 10000000
     .ledc_timer = LEDC_TIMER_0,
     .ledc_channel = LEDC_CHANNEL_0,
@@ -239,7 +240,8 @@ void app_main(void)
         ret = nvs_flash_init();
     }
 
-    connect_wifi();
+    //connect_wifi();
+    wifi_sta_init();
 
     if (wifi_connect_status)
     {
@@ -269,17 +271,11 @@ void app_main(void)
 /*
     while (1)
     {
-        ESP_LOGI(TAG, "Taking picture...");
-        camera_fb_t *pic = esp_camera_fb_get();
-
-        // use pic->buf to access the image
-        ESP_LOGI(TAG, "Picture taken! Its size was: %zu bytes", pic->len);
-        esp_camera_fb_return(pic);
-
-        vTaskDelay(5000 / portTICK_RATE_MS);
+        //wifi_sta_reconnect();
+        vTaskDelay(10000 / portTICK_PERIOD_MS);
     }
-*/
 
+*/
 
 /*
     for (int i = 10; i >= 0; i--) {
